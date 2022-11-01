@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8"/>
+   <link rel= "stylesheet" href="LOGIN.CSS">
+   <title>Registrar</title>
+</head>
+
+<body id="bodyR">
+    <div id="formR">
+
+<form action= "Login.html" onsubmit="Enviar(Login.value, Senha.value, Senha2.value);">
+    <p>
+        <iabel for="nome">Nome:</iabel>
+        <input type="text" id="nome" placeholder="digite o seu primeiro nome:"/>
+    </p>
+    <p>
+        <iabel for="SobreNome">Sobrenome:</iabel>
+        <input type="text" id="SobreNome" placeholder="digite o seu Sobrenome:"/>
+    </p>
+    
+<p>     <iabel for="Data de Nascimento">Data de nascimento:</iabel>
+        <input type="Date" id="Data de Nascimento" placeholder="Digite a sua data de nascimento:" required/>
+</P>
+    <p> <iabel for="CPF">CPF:</iabel> 
+        <input type="numer" id="CPF" placeholder="Informe o seu CPF:"/>
+    </p>
+
+    <p> <iabel for="RG">RG:</iabel>
+        <input type="number" id="RG" placeholder="Informe o seu RG:"/>
+    </p>
+    <p> <iabel for="Email">Email:</iabel>
+        <input type="text" id="Email" placeholder="Informe o seu Email:"/>
+    </p>
+    <p>
+        <iabel for="Login">login:</iabel>
+        <input type="text" id="Login" placeholder="digite o seu Login:"/>
+    </p>
+    <p> <iabel for="Senha">Senha:</iabel> 
+        <input type="numer" id="Senha" placeholder="Informe a sua senha:"/>
+    </p>
+    <p> <iabel for="Senha2">Confirme sua senha:</iabel> 
+        <input type="numer" id="Senha2" placeholder="Confirme sua senha:"/>
+        </p>
+        
+        <p> <button type="submit">Enviar</button></p>
+        </form> 
+    </div>      
+</body>
+
+<script>
+    function Enviar(Login, Senha, Senha2) {
+
+     if(Login.value == '5') {
+         if(Senha.value == '8'){
+            alert ("Deu bom baby !!")  
+     }}
+     if (Senha == Senha2){
+        sessionStorage.setItem("Login", Login);  
+        sessionStorage.setItem("Senha", Senha); 
+        alert("Cadastrado com sucesso!") 
+     } 
+     else 
+     alert ("Senha diferentes!") 
+
+    }
+</script>
+ 
+    </html>
+    
+    

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8"/>
+   <link rel= "stylesheet" href="LOGIN.CSS">
+
+   <title>Pagamento</title>
+</head>
+<body id="bodyP" onload="VaF();" >
+   <div id="formP">
+
+<form>
+    <p>
+<p><iabel for="nometitu">Nome do titular do cartão:</iabel>
+    <input type="text" id="nometitu" placeholder="Informe o nome do titular do cartao:"/>
+     </p>
+     <p ><iabel for="numeroCartao">Numero do Cartão:</iabel> 
+         <input type="numer" id="numeroCartao" placeholder="Informe o numero do ser cartão:"/>
+         <p><iabel for="Data de Nascimento">Data de validade do cartão:</iabel>
+
+            <input type="Date" id="Data de validade do cartao" placeholder="Digite a sua data de validade do seu cartão:" required/>
+
+         <p ><iabel for="numeroSegurancacartao">Numero de Segurança do cartão:</iabel> 
+            <input type="numer" id="numeroSegurancacartao" placeholder="Informe o numero de segurança do seu cartão:"/>
+
+            <p ><iabel for="Valor Final da Compra">Valor Final da Compra:</iabel> 
+               <input type="numer" id="VF" paceholder="Valor á vista:"/>
+
+               <br>
+               
+Parcelamento:
+<br>
+1px:
+<input type='radio' name="x" value="1">
+2px:
+<input type='radio' name="x" value="2">
+3px:
+<input type='radio' name="x" value="3">
+4px:
+<input type='radio' name="x" value="4">
+(sem juros)
+<br>
+5px:
+<input type='radio' name="x" value="5">
+6px:
+<input type='radio' name="x" value="6">
+7px:
+<input type='radio' name="x" value="7">
+8px:
+<input type='radio' name="x" value="8">
+(Juros de 5%)
+<br>
+9px:
+<input type='radio' name="x" value="9">
+10px:
+<input type='radio' name="x" value="10">
+11px:
+<input type='radio' name="x" value="11">
+12px:
+<input type='radio' name="x" value="12">
+(Juros de 1,5% a/m)
+<br>
+
+Valor de cada parcela:
+<input type='number' name='VFP'>
+<br>
+<button onclick="verificar(VFP,x,VF) ;return false;">Calcular</button>
+<br>
+
+        
+
+ 
+         </div>
+</p>
+</form>
+</body>
+
+<script>
+
+function VaF (){
+   var VAF = document.getElementById("VF");
+   VAF.value = sessionStorage.getItem("VF");
+   
+}
+
+function verificar(VFP,x,VF) {
+
+
+alert(VFP.value + x.value + VF.value)
+
+   VFP.value = VF.value / x.value
+   
+   
+}
+
+</script>
+

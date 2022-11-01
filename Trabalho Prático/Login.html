@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8"/> 
+   <link rel= "stylesheet" href="LOGIN.CSS">
+
+<body id="body">
+    <div id="form">
+    
+   <title>Login</title>
+</head>
+
+    <main><h1>Login</h1> 
+        <form action= "LOJA.HTML" onsubmit="Enviar(Login, Senha);return false;">
+
+<p>         <label for="Login">Login:</label>
+            <input type="text" id="Login" placeholder="Informe o seu Login:" required />
+</p>
+<p>        <label for="Senha">Senha:</label> 
+           <input type="password" id="Senha" placeholder="Informe a sua senha:" required />
+
+        
+
+</p>         <button type="submit">Enviar </button></p>
+<p>          <button type="submit" formaction="Registro.html">Registrar</button></p>
+        </form>
+    </main>
+
+</div>
+</body>  
+</html>
+
+<script>
+      function Enviar ( Login, Senha) {
+        if ( !sessionStorage ) {
+          alert('Armazenamento não suportado.');
+          return false;
+        }
+        var log;
+        var sen;
+        log = sessionStorage.getItem("Login");
+        sen = sessionStorage.getItem("Senha");
+         
+        if(Login.value == log && Senha.value == sen){
+          alert("bem-vindo ao site");
+          submit();
+        }
+        else if(Login.value != log && Senha.value != sen){
+          alert("senha incorreta");
+          submit();
+        } 
+      }
+	  
+	  function lista() {
+        if ( !sessionStorage ) {
+          alert("Armazenamento Vazio!");
+          return false;
+        }
+        var tamanho = sessionStorage.length;
+        var tabela = document.getElementById('tabela');
+        for ( var i = 0 ; i < tamanho ; i++ ) {
+          var dados = sessionStorage.getItem(i);
+          dados = dados.split(',');
+          tabela.innerHTML = tabela.innerHTML + 
+		  '<tr><td>' + dados[0] + '</td><td>' + dados[1] + '</td></tr>';
+        }
+        return false;
+      }
+	  
+	  
+</script>

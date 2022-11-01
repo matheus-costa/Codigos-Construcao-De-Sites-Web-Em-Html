@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8"/> <link rel= "stylesheet" href="PLAY.css">
+   <style >
+    table{
+      margin-left: auto;
+      margin-right: auto;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+<table border='15'>
+    <thead>
+
+        <tr>
+
+            <th>PlayStation</th>
+            <th>Imagem</th>
+            <th>valor</th>
+            <th>Escolha um item</th>
+            <th>Quantidade</th>
+        </tr> 
+
+    </thead>
+
+    <tbody>
+        <form action= "Pagamento.html" >
+        
+        <tr> 
+            <td>PlayStation 1</td> 
+            <td><img src="Play1.jfif" heigt="100" width="100" > </td> 
+             <td>8,00</td> 
+             <td> <input type="checkbox" value="1" onclick="habilitar(this.value,this.checked);"></input></td>
+        <td><input type="number" id="Quantidade1" disabled> </input></td>  
+           
+        <tr> 
+            <td>PlayStation 2</td>
+            <td><img src="Play2.jfif" heigt="100" width="100" > </td>
+             <td>8,00</td>
+             <td> <input type="checkbox" value="2" onclick="habilitar(this.value,this.checked);"></input></td>
+        <td><input type="number" id="Quantidade2" disabled> </input></td>  
+                        
+         </tr>
+
+         <tr> 
+
+            <td>PlayStation 3</td> 
+            <td><img src="Play3.jfif" heigt="100" width="100" > </td>
+            <td>8,00</td>  
+            <td> <input type="checkbox" value="3" onclick="habilitar(this.value,this.checked);"></input></td>
+          <td><input type="number" id="Quantidade3" disabled> </input></td>  
+         </tr>
+
+         <tr> 
+
+            <td>PlayStation 4</td>
+            <td><img src="Play4.jfif" heigt="100" width="100" > </td>
+             <td>8,00</td> 
+             <td> <input type="checkbox" value="4" onclick="habilitar(this.value,this.checked);"></input></td>
+             <td><input type="number" id="Quantidade4" disabled> </input></td>  
+         </tr>
+
+         <tr>
+            <th colspan="3"> <button onclick="calcular(Quantidade1,Quantidade2,Quantidade3,Quantidade4,total);return false;"> Calcular </button></th>
+            <th>Total:</th>
+            <th><input id="total" disabled/></th>
+          </tr>
+          <tr>
+          <th><button type="submit">Fechar carinho</button></th>
+          </tr>
+
+        </tbody>
+          
+    </table>
+
+     </form>
+    </body>
+
+
+</html>
+<script>
+	function habilitar(valor, checked){
+		if(checked){
+			document.getElementById("Quantidade"+valor).disabled = false;
+		}
+		else{
+			document.getElementById("Quantidade"+valor).disabled = true;
+			document.getElementById("Quantidade"+valor).value = "";
+		}	
+	}
+
+	function calcular (Quantidade1, Quantidade2, Quantidade3,Quantidade4,res){
+		var total = 0;
+		
+		if (Quantidade1.disabled == false)
+			total += Quantidade1.value * 8;
+			
+		if (Quantidade2.disabled == false)
+			total += Quantidade2.value * 8;
+		
+		if (Quantidade3.disabled == false)
+			total += Quantidade3.value * 8;	
+
+         if (Quantidade4.disabled == false)
+			total += Quantidade4.value * 8;	
+			
+		
+		res.value = total;
+    sessionStorage.setItem("VF", res.value)
+	}
+</script>
